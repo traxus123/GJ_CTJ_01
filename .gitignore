@@ -63,3 +63,5 @@ crashlytics-build.properties
 CTJ/Logs/
 
 CTJ/Packages/
+
+CTJ/Temp/
