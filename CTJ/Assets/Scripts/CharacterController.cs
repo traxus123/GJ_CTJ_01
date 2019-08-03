@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour
 
     public UIBag m_UIBag;
 
-    int indexToy;
+    int m_IndexToy;
     bool m_Hide = false;
     bool m_FacingRight = true;
     Rigidbody2D m_Rigidbody2D;
@@ -28,9 +28,9 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
-        indexToy = 0;
+        m_IndexToy = 0;
         if (m_UIBag != null)
-            m_UIBag.ChangedToy(indexToy);
+            m_UIBag.ChangedToy(m_IndexToy, false);
 
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
@@ -81,10 +81,10 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(handLeft.Disappear());
         }
 
-        if (m_ToysPrefab != null && Input.GetMouseButtonDown(0) && !m_UsedToys[indexToy])
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(0) && !m_UsedToys[m_IndexToy])
         {
-            Toy lego = Instantiate(m_ToysPrefab[indexToy]);
-            m_UsedToys[indexToy] = true;
+            Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+            m_UsedToys[m_IndexToy] = true;
 
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
@@ -94,10 +94,10 @@ public class CharacterController : MonoBehaviour
             lego.LaunchLeft();
         }
         
-        if (m_ToysPrefab != null && Input.GetMouseButtonDown(1) && !m_UsedToys[indexToy])
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(1) && !m_UsedToys[m_IndexToy])
         {
-            Toy lego = Instantiate(m_ToysPrefab[indexToy]);
-            m_UsedToys[indexToy] = true;
+            Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+            m_UsedToys[m_IndexToy] = true;
 
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
@@ -110,27 +110,27 @@ public class CharacterController : MonoBehaviour
         if (m_ToysPrefab != null)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
-                indexToy = 0;
+                m_IndexToy = 0;
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
-                indexToy = 1;
+                m_IndexToy = 1;
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
-                indexToy = 2;
+                m_IndexToy = 2;
             
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 int updateIndex = (int)(Input.GetAxis("Mouse ScrollWheel") * 10 % 3);
-                indexToy += updateIndex;
+                m_IndexToy += updateIndex;
 
-                if (indexToy < 0)
-                    indexToy = m_ToysPrefab.Length - 1;
-                else if (indexToy > m_ToysPrefab.Length - 1)
-                    indexToy = 0;
+                if (m_IndexToy < 0)
+                    m_IndexToy = m_ToysPrefab.Length - 1;
+                else if (m_IndexToy > m_ToysPrefab.Length - 1)
+                    m_IndexToy = 0;
             }
 
             if (m_UIBag != null)
-                m_UIBag.ChangedToy(indexToy);
+                m_UIBag.ChangedToy(m_IndexToy, m_UsedToys[m_IndexToy]);
 
         }
     }

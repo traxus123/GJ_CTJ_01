@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIBag : MonoBehaviour
 {
     public GameObject[] Toys;
+    public GameObject RedCross;
 
     private void Awake()
     {
@@ -12,9 +13,10 @@ public class UIBag : MonoBehaviour
         {
            Toys[i].SetActive(false);
         }
+        RedCross.SetActive(false);
     }
 
-    public void ChangedToy(int index)
+    public void ChangedToy(int index, bool alreadyUse)
     {
         for (int i = 0; i < Toys.Length; i++)
         {
@@ -23,5 +25,6 @@ public class UIBag : MonoBehaviour
             else
                 Toys[i].SetActive(true);
         }
+        RedCross.SetActive(alreadyUse);
     }
 }

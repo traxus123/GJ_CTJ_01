@@ -154,4 +154,5 @@ MonoBehaviour:
   - {fileID: -1602382041650877192, guid: b3d490462484b2f4e8c2488e3f71871c, type: 3}
   - {fileID: -1602382041650877192, guid: f82dd4d792a01c34fa9a3e1b9acb4f8c, type: 3}
   - {fileID: -1602382041650877192, guid: b0c28acfe1b993a46b4e578ac17822af, type: 3}
+  m_UIBag: {fileID: 0}
   m_GroundRadius: 0.01
