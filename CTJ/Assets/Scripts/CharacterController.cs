@@ -24,14 +24,14 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
         // Check ground
-        m_Grounded = Physics2D.OverlapCircle(m_GroundCheck.position, m_GroundRadius, m_WatIsGround);
-
+        
         Debug.Log("m_Grounded " + m_Grounded);
 
         //Move
@@ -99,6 +99,20 @@ public class CharacterController : MonoBehaviour
         Vector3 invScale = transform.localScale;
         invScale.x *= -1;
         transform.localScale = invScale;
+    }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Ground")
+        {
+            m_Grounded = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Ground")
+        {
+            m_Grounded = false;
+        }
     }
 
 }
