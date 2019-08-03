@@ -9,12 +9,11 @@ public class CharacterController : MonoBehaviour
     public float m_JumpForcePogo = 600.0f;
     public float m_WhenHideSpeedDividedBy = 2.0f;
     public HandBehaviour m_HandPrefab;
-    
+    public Animator m_Animator;
     public Toy[] m_ToysPrefab;
-    bool[] m_UsedToys;
-
     public UIBag m_UIBag;
 
+    bool[] m_UsedToys;
     bool m_OnPogostick;
     int m_IndexToy;
     bool m_Hide = false;
@@ -23,7 +22,7 @@ public class CharacterController : MonoBehaviour
     bool m_Grounded = false;
     public float m_GroundRadius = 0.01f;
     int m_handCooldown = 0;
-    
+
     HandBehaviour handLeft = null;
     HandBehaviour handRight = null;
 
@@ -50,6 +49,14 @@ public class CharacterController : MonoBehaviour
         float velX = move * m_MaxSpeed;
         if (m_Hide)
             velX = move * m_MaxSpeed / m_WhenHideSpeedDividedBy;
+        
+        if (m_Animator != null)
+        {
+            if (move != 0)
+                m_Animator.SetBool("m_Run", true);
+            else
+                m_Animator.SetBool("m_Run", false);
+        }
 
         m_Rigidbody2D.velocity = new Vector2(velX, m_Rigidbody2D.velocity.y);
 
