@@ -22,6 +22,7 @@ public class CharacterController : MonoBehaviour
     Rigidbody2D m_Rigidbody2D;
     bool m_Grounded = false;
     public float m_GroundRadius = 0.01f;
+    int m_handCooldown = 0;
     
     HandBehaviour handLeft = null;
     HandBehaviour handRight = null;
@@ -79,6 +80,17 @@ public class CharacterController : MonoBehaviour
             m_Hide = false;
             StartCoroutine(handRight.Disappear());
             StartCoroutine(handLeft.Disappear());
+        }
+        if(m_Hide && m_handCooldown == 300)
+        {
+            m_Hide = false;
+            StartCoroutine(handRight.Disappear());
+            StartCoroutine(handLeft.Disappear());
+            m_handCooldown = 0;
+        }
+        if (m_Hide)
+        {
+            m_handCooldown++;
         }
 
         if (m_ToysPrefab != null && Input.GetMouseButtonDown(0) && !m_UsedToys[m_IndexToy])
