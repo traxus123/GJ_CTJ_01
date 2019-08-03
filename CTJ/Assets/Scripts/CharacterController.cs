@@ -11,11 +11,13 @@ public class CharacterController : MonoBehaviour
     public LayerMask m_WatIsGround;
     public HandBehaviour m_HandPrefab;
 
+    public Toy m_LegoPrefab;
+
     bool m_Hide = false;
     bool m_FacingRight = true;
     Rigidbody2D m_Rigidbody2D;
     bool m_Grounded = false;
-    float m_GroundRadius = 0.01f;
+    public float m_GroundRadius = 0.01f;
 
     HandBehaviour handLeft = null;
     HandBehaviour handRight = null;
@@ -29,7 +31,9 @@ public class CharacterController : MonoBehaviour
     {
         // Check ground
         m_Grounded = Physics2D.OverlapCircle(m_GroundCheck.position, m_GroundRadius, m_WatIsGround);
-        
+
+        Debug.Log("m_Grounded " + m_Grounded);
+
         //Move
         // Add anim for moving
         float move = Input.GetAxis("Horizontal");
@@ -69,7 +73,24 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(handRight.Disappear());
             StartCoroutine(handLeft.Disappear());
         }
+
+        if (m_LegoPrefab != null && Input.GetMouseButtonDown(0))
+        {
+            Toy lego = Instantiate(m_LegoPrefab);
+            Vector3 newPos = transform.position;
+            newPos.z = -1.0f;
+            lego.transform.position = newPos;
+            lego.LaunchRight();
+        }
         
+        if (m_LegoPrefab != null && Input.GetMouseButtonDown(1))
+        {
+            Toy lego = Instantiate(m_LegoPrefab);
+            Vector3 newPos = transform.position;
+            newPos.z = -1.0f;
+            lego.transform.position = newPos;
+            lego.LaunchLeft();
+        }
     }
 
     private void Flip()

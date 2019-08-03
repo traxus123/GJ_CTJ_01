@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165933475156620094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.288415, y: -2.13, z: -45.273438}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7452181192315003648}
   m_Father: {fileID: 0}
@@ -73,13 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -743574260923404329, guid: 5790cfc1bbf13ce488758c3faf380773,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24ad6dc70dc351349a4eef86fe71c138, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.34}
+  m_Size: {x: 2.84, y: 5.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,9 +100,9 @@ BoxCollider2D:
   m_Offset: {x: 0.00037893653, y: 0.022917584}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999887, y: 0.52019453}
-    oldSize: {x: 0.32, y: 0.34}
-    newSize: {x: 0.32, y: 0.34}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.84, y: 5.17}
+    newSize: {x: 2.84, y: 5.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -153,6 +152,8 @@ MonoBehaviour:
     m_Bits: 256
   m_HandPrefab: {fileID: 8883105194730958669, guid: aa716c5555021cd4aac0a517b0f4c716,
     type: 3}
+  m_LegoPrefab: {fileID: -1602382041650877192, guid: b3d490462484b2f4e8c2488e3f71871c,
+    type: 3}
 --- !u!58 &165933475156620091
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943520802787313489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.177, z: 0}
+  m_LocalPosition: {x: 0.3, y: -2.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 165933475156620095}
