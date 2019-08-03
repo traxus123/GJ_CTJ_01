@@ -116,6 +116,9 @@ public class CharacterController : MonoBehaviour
             }
             else
             {
+                if (m_FacingRight)
+                    Flip();
+
                 Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
                 m_UsedToys[m_IndexToy] = true;
 
@@ -130,15 +133,26 @@ public class CharacterController : MonoBehaviour
         
         if (m_ToysPrefab != null && Input.GetMouseButtonDown(1) && !m_UsedToys[m_IndexToy])
         {
-            Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
-            m_UsedToys[m_IndexToy] = true;
+            if (m_ToysPrefab[m_IndexToy].name == "Pogostick")
+            {
+                m_OnPogostick = true;
+                m_UsedToys[m_IndexToy] = true;
+            }
+            else
+            {
+                if (!m_FacingRight)
+                    Flip();
 
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+                Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+                m_UsedToys[m_IndexToy] = true;
 
-            Vector3 newPos = transform.position;
-            newPos.z = 5.0f;
-            lego.transform.position = newPos;
-            lego.LaunchRight();
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+
+                Vector3 newPos = transform.position;
+                newPos.z = 5.0f;
+                lego.transform.position = newPos;
+                lego.LaunchRight();
+            }
         }
 
         if (m_ToysPrefab != null)
