@@ -70,8 +70,8 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && !m_Hide && handRight == null) // Hide 
         {
             m_Hide = true;
-            handRight = Instantiate<HandBehaviour>(m_HandPrefab, new Vector3(6.8f, -10.0f, -2.0f), new Quaternion());
-            handLeft = Instantiate<HandBehaviour>(m_HandPrefab, new Vector3(-6.8f, -10.0f, -2.0f), Quaternion.Euler(0, 180.0f, 0));
+            handRight = Instantiate<HandBehaviour>(m_HandPrefab, new Vector3(6.8f, -10.0f, -5.0f), new Quaternion());
+            handLeft = Instantiate<HandBehaviour>(m_HandPrefab, new Vector3(-6.8f, -10.0f, -5.0f), Quaternion.Euler(0, 180.0f, 0));
         }
 
         if (Input.GetKeyUp(KeyCode.S) && m_Hide) // Show
