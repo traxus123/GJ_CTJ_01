@@ -95,7 +95,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03998053, y: -0.22954774}
+  m_Offset: {x: 0.04248476, y: -0.0114963055}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4529178, y: 4.551796}
+  m_Size: {x: 2.2390108, y: 4.426269}
   m_EdgeRadius: 0
 --- !u!50 &165933475156620092
 Rigidbody2D:
@@ -150,6 +150,8 @@ MonoBehaviour:
     m_Bits: 256
   m_HandPrefab: {fileID: 8883105194730958669, guid: aa716c5555021cd4aac0a517b0f4c716,
     type: 3}
-  m_LegoPrefab: {fileID: -1602382041650877192, guid: b3d490462484b2f4e8c2488e3f71871c,
-    type: 3}
+  m_ToysPrefab:
+  - {fileID: -1602382041650877192, guid: b3d490462484b2f4e8c2488e3f71871c, type: 3}
+  - {fileID: -1602382041650877192, guid: f82dd4d792a01c34fa9a3e1b9acb4f8c, type: 3}
+  - {fileID: -1602382041650877192, guid: b0c28acfe1b993a46b4e578ac17822af, type: 3}
   m_GroundRadius: 0.01

@@ -11,29 +11,31 @@ public class CharacterController : MonoBehaviour
     public LayerMask m_WatIsGround;
     public HandBehaviour m_HandPrefab;
 
-    public Toy m_LegoPrefab;
+    public Toy[] m_ToysPrefab;
 
+    public UIBag m_UIBag;
+
+    int indexToy;
     bool m_Hide = false;
     bool m_FacingRight = true;
     Rigidbody2D m_Rigidbody2D;
     bool m_Grounded = false;
     public float m_GroundRadius = 0.01f;
-
+    
     HandBehaviour handLeft = null;
     HandBehaviour handRight = null;
 
     private void Awake()
     {
+        indexToy = 0;
+        if (m_UIBag != null)
+            m_UIBag.ChangedToy(indexToy);
 
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        // Check ground
-        
-        Debug.Log("m_Grounded " + m_Grounded);
-
         //Move
         // Add anim for moving
         float move = Input.GetAxis("Horizontal");
@@ -74,22 +76,43 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(handLeft.Disappear());
         }
 
-        if (m_LegoPrefab != null && Input.GetMouseButtonDown(0))
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(0))
         {
-            Toy lego = Instantiate(m_LegoPrefab);
+            Toy lego = Instantiate(m_ToysPrefab[indexToy]);
+
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+
+            Vector3 newPos = transform.position;
+            newPos.z = -1.0f;
+            lego.transform.position = newPos;
+            lego.LaunchLeft();
+        }
+        
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(1))
+        {
+            Toy lego = Instantiate(m_ToysPrefab[indexToy]);
+
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+
             Vector3 newPos = transform.position;
             newPos.z = -1.0f;
             lego.transform.position = newPos;
             lego.LaunchRight();
         }
-        
-        if (m_LegoPrefab != null && Input.GetMouseButtonDown(1))
+
+        if (m_ToysPrefab != null)
         {
-            Toy lego = Instantiate(m_LegoPrefab);
-            Vector3 newPos = transform.position;
-            newPos.z = -1.0f;
-            lego.transform.position = newPos;
-            lego.LaunchLeft();
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+                indexToy = 0;
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+                indexToy = 1;
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+                indexToy = 2;
+
+            if (m_UIBag != null)
+                m_UIBag.ChangedToy(indexToy);
         }
     }
 
@@ -100,6 +123,7 @@ public class CharacterController : MonoBehaviour
         invScale.x *= -1;
         transform.localScale = invScale;
     }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.collider.tag == "Ground")
@@ -107,6 +131,7 @@ public class CharacterController : MonoBehaviour
             m_Grounded = true;
         }
     }
+
     void OnCollisionExit2D(Collision2D coll)
     {
         if (coll.collider.tag == "Ground")
