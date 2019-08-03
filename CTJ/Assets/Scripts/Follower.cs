@@ -13,7 +13,6 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("m_Grounded " + Player.position);
         mouvment.Enqueue(Player.position);
         if(mouvment.Count >= Time){
             PFollower.position = mouvment.Peek();

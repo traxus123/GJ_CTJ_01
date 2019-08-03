@@ -12,12 +12,7 @@ public class Enemy_2 : MonoBehaviour
     private Vector3 destination;
     private float speed = 5.0f;
     private bool first = true;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
