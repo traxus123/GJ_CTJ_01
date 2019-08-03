@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -196,6 +197,11 @@ public class CharacterController : MonoBehaviour
         if (coll.collider.tag == "Ground")
         {
             m_Grounded = true;
+        }
+
+        if (coll.collider.tag == "Enemy")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
