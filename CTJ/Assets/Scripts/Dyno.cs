@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Balloons : MonoBehaviour
+public class Dyno : MonoBehaviour
 {
     private bool m_activation;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -15,7 +15,7 @@ public class Balloons : MonoBehaviour
     {
         if (m_activation)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 2.0f);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f, GetComponent<Rigidbody2D>().velocity.y);
         }
     }
 
@@ -24,10 +24,6 @@ public class Balloons : MonoBehaviour
         if (coll.collider.tag == "Ground")
         {
             m_activation = true;
-        }
-        if (coll.collider.tag == "Player")
-        {
-            //Animation de destruction
         }
     }
 }
