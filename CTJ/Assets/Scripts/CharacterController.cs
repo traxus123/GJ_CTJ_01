@@ -8,8 +8,6 @@ public class CharacterController : MonoBehaviour
     public float m_JumpForce = 300.0f;
     public float m_JumpForcePogo = 600.0f;
     public float m_WhenHideSpeedDividedBy = 2.0f;
-    public Transform m_GroundCheck;
-    public LayerMask m_WatIsGround;
     public HandBehaviour m_HandPrefab;
     
     public Toy[] m_ToysPrefab;
