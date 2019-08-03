@@ -83,7 +83,7 @@ public class CharacterController : MonoBehaviour
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
             Vector3 newPos = transform.position;
-            newPos.z = -1.0f;
+            newPos.z = 5.0f;
             lego.transform.position = newPos;
             lego.LaunchLeft();
         }
@@ -95,7 +95,7 @@ public class CharacterController : MonoBehaviour
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
             Vector3 newPos = transform.position;
-            newPos.z = -1.0f;
+            newPos.z = 5.0f;
             lego.transform.position = newPos;
             lego.LaunchRight();
         }
@@ -110,9 +110,22 @@ public class CharacterController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
                 indexToy = 2;
+            
+            if (Input.GetAxis("Mouse ScrollWheel") != 0)
+            {
+                int updateIndex = (int)(Input.GetAxis("Mouse ScrollWheel") * 10 % 3);
+                Debug.Log("updateIndex " + updateIndex);
+                indexToy += updateIndex;
+
+                if (indexToy < 0)
+                    indexToy = m_ToysPrefab.Length - 1;
+                else if (indexToy > m_ToysPrefab.Length - 1)
+                    indexToy = 0;
+            }
 
             if (m_UIBag != null)
                 m_UIBag.ChangedToy(indexToy);
+
         }
     }
 
