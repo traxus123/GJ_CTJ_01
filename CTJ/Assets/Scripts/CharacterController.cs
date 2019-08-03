@@ -12,6 +12,7 @@ public class CharacterController : MonoBehaviour
     public HandBehaviour m_HandPrefab;
 
     public Toy[] m_ToysPrefab;
+    bool[] m_UsedToys;
 
     public UIBag m_UIBag;
 
@@ -32,6 +33,10 @@ public class CharacterController : MonoBehaviour
             m_UIBag.ChangedToy(indexToy);
 
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+        m_UsedToys = new bool[m_ToysPrefab.Length];
+        for (int i = 0; i < m_UsedToys.Length; i++)
+            m_UsedToys[i] = false;
     }
 
     private void FixedUpdate()
@@ -76,9 +81,10 @@ public class CharacterController : MonoBehaviour
             StartCoroutine(handLeft.Disappear());
         }
 
-        if (m_ToysPrefab != null && Input.GetMouseButtonDown(0))
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(0) && !m_UsedToys[indexToy])
         {
             Toy lego = Instantiate(m_ToysPrefab[indexToy]);
+            m_UsedToys[indexToy] = true;
 
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
@@ -88,9 +94,10 @@ public class CharacterController : MonoBehaviour
             lego.LaunchLeft();
         }
         
-        if (m_ToysPrefab != null && Input.GetMouseButtonDown(1))
+        if (m_ToysPrefab != null && Input.GetMouseButtonDown(1) && !m_UsedToys[indexToy])
         {
             Toy lego = Instantiate(m_ToysPrefab[indexToy]);
+            m_UsedToys[indexToy] = true;
 
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
@@ -114,7 +121,6 @@ public class CharacterController : MonoBehaviour
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 int updateIndex = (int)(Input.GetAxis("Mouse ScrollWheel") * 10 % 3);
-                Debug.Log("updateIndex " + updateIndex);
                 indexToy += updateIndex;
 
                 if (indexToy < 0)
