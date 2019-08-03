@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_2 : MonoBehaviour
+public class Enemy_2 : Enemy
 {
     public Transform player;
     public Transform enemy;
@@ -16,9 +16,11 @@ public class Enemy_2 : MonoBehaviour
     private bool first = true;
     
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        if (!mooving)
+        base.Update();
+
+        /*if (!mooving)
         {
             if (!onCooldown)
             {
@@ -31,11 +33,15 @@ public class Enemy_2 : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
 
-        if (mooving)
+        if (mooving && !Stun)
         {
-            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+            float speedX = speed;
+            if (Slow)
+                speedX /= 2.0f;
+
+            transform.position = Vector3.MoveTowards(transform.position, destination, speedX * Time.deltaTime);
             
             if (Vector3.Distance(transform.position, destination) < 1f)
             {
@@ -52,6 +58,20 @@ public class Enemy_2 : MonoBehaviour
                 onCooldown = false;
                 cooldown = 0;
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Character" && !mooving && !onCooldown)
+        {
+            destination = collision.transform.position;
+            mooving = true;
+        }
+
+        if (collision.tag == "Figure" && !onCooldown)
+        {
+            destination = collision.transform.position;
         }
     }
 }
