@@ -6,16 +6,18 @@ public class CharacterController : MonoBehaviour
 {
     public float m_MaxSpeed = 10.0f;
     public float m_JumpForce = 300.0f;
+    public float m_JumpForcePogo = 600.0f;
     public float m_WhenHideSpeedDividedBy = 2.0f;
     public Transform m_GroundCheck;
     public LayerMask m_WatIsGround;
     public HandBehaviour m_HandPrefab;
-
+    
     public Toy[] m_ToysPrefab;
     bool[] m_UsedToys;
 
     public UIBag m_UIBag;
 
+    bool m_OnPogostick;
     int m_IndexToy;
     bool m_Hide = false;
     bool m_FacingRight = true;
@@ -29,6 +31,7 @@ public class CharacterController : MonoBehaviour
 
     private void Awake()
     {
+        m_OnPogostick = false;
         m_IndexToy = 0;
         if (m_UIBag != null)
             m_UIBag.ChangedToy(m_IndexToy, false);
@@ -66,6 +69,12 @@ public class CharacterController : MonoBehaviour
             // Add anim for jump
             if (!m_Hide)
                 m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
+
+            if (m_OnPogostick)
+            {
+                m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
+                m_OnPogostick = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.S) && !m_Hide && handRight == null) // Hide 
@@ -95,15 +104,23 @@ public class CharacterController : MonoBehaviour
 
         if (m_ToysPrefab != null && Input.GetMouseButtonDown(0) && !m_UsedToys[m_IndexToy])
         {
-            Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
-            m_UsedToys[m_IndexToy] = true;
+            if (m_ToysPrefab[m_IndexToy].name == "Pogostick")
+            {
+                m_OnPogostick = true;
+                m_UsedToys[m_IndexToy] = true;
+            }
+            else
+            {
+                Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+                m_UsedToys[m_IndexToy] = true;
 
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
 
-            Vector3 newPos = transform.position;
-            newPos.z = 5.0f;
-            lego.transform.position = newPos;
-            lego.LaunchLeft();
+                Vector3 newPos = transform.position;
+                newPos.z = 5.0f;
+                lego.transform.position = newPos;
+                lego.LaunchLeft();
+            }
         }
         
         if (m_ToysPrefab != null && Input.GetMouseButtonDown(1) && !m_UsedToys[m_IndexToy])
