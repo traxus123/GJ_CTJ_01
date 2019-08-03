@@ -787,7 +787,7 @@ MonoBehaviour:
     type: 3}
   m_Animator: {fileID: 2535184410126813146}
   m_ToysPrefab:
-  - {fileID: -1602382041650877192, guid: b3d490462484b2f4e8c2488e3f71871c, type: 3}
+  - {fileID: 6458825423805734100, guid: b3d490462484b2f4e8c2488e3f71871c, type: 3}
   - {fileID: -1602382041650877192, guid: f82dd4d792a01c34fa9a3e1b9acb4f8c, type: 3}
   - {fileID: 6699370156972498454, guid: e7f791589de886344b455beac3a0c6fd, type: 3}
   m_UIBag: {fileID: 0}
