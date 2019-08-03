@@ -6,24 +6,25 @@ public class Enemy_2 : MonoBehaviour
 {
     public Transform player;
     public Transform enemy;
-    private bool mooving;
-    private bool onCooldown;
+    public float speed = 5.0f;
+    public float radius = 5.0f;
+
+    private bool mooving = false;
+    private bool onCooldown = false;
     private int cooldown;
     private Vector3 destination;
-    private float speed = 5.0f;
     private bool first = true;
     
     // Update is called once per frame
     void Update()
     {
-
         if (!mooving)
         {
             if (!onCooldown)
             {
-                if (((player.position.x - enemy.position.x) <= 5 && (player.position.x - enemy.position.x) >= -5))
+                if (((player.position.x - enemy.position.x) <= radius && (player.position.x - enemy.position.x) >= -radius))
                 {
-                    if (((player.position.y - enemy.position.y) <= 5 && (player.position.y - enemy.position.y) >= -5))
+                    if (((player.position.y - enemy.position.y) <= radius && (player.position.y - enemy.position.y) >= -radius))
                     {
                         destination = player.position;
                         mooving = true;
@@ -31,20 +32,13 @@ public class Enemy_2 : MonoBehaviour
                 }
             }
         }
-        Debug.Log(destination);
 
         if (mooving)
         {
-            float step = speed * Time.deltaTime;
-            if (first)
+            transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
+            
+            if (Vector3.Distance(transform.position, destination) < 1f)
             {
-                step = 3.0f;
-            }
-            transform.position = Vector3.MoveTowards(transform.position, destination, step);
-
-            if (enemy.position.x == destination.x && enemy.position.y == destination.y)
-            {
-                first = false;
                 mooving = false;
                 onCooldown = true;
             }
