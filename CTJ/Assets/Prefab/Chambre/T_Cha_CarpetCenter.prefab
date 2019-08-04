@@ -83,5 +83,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.drawMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2051729322947565606, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a, type: 3}
