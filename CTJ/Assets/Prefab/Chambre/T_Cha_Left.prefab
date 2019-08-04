@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6805717466324429174, guid: 9f871300a21adc7439e58c9b4662f6ec,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Cha_Left
       objectReference: {fileID: 0}
     - target: {fileID: 8018721119458799745, guid: 9f871300a21adc7439e58c9b4662f6ec,
         type: 3}
@@ -66,6 +66,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018721119458799745, guid: 9f871300a21adc7439e58c9b4662f6ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018721119458799745, guid: 9f871300a21adc7439e58c9b4662f6ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 644205625183684855, guid: 9f871300a21adc7439e58c9b4662f6ec,
         type: 3}
