@@ -75,13 +75,18 @@ public class CharacterController : MonoBehaviour
             m_Animator.SetBool("m_Jump", true);
 
             // Add anim for jump
-            if (!m_Hide)
-                m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
 
-            if (m_OnPogostick)
+            if (!m_Hide)
             {
-                m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
-                m_OnPogostick = false;
+                if (m_OnPogostick)
+                {
+                    m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForcePogo));
+                    m_OnPogostick = false;
+                }
+                else
+                {
+                        m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
+                }
             }
         }
 
@@ -204,7 +209,7 @@ public class CharacterController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.collider.tag == "Ground")
+        if (CheckTag(coll.transform, "Ground"))
         {
             m_Grounded = true;
             m_Animator.SetBool("m_Jump", false);
@@ -218,7 +223,7 @@ public class CharacterController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D coll)
     {
-        if (coll.collider.tag == "Ground")
+        if (CheckTag(coll.transform, "Ground"))
         {
             m_Grounded = false;
         }
@@ -227,5 +232,17 @@ public class CharacterController : MonoBehaviour
     public void SetEndThrow()
     {
         m_Animator.SetBool("m_Throw", false);
+    }
+
+    private bool CheckTag(Transform transform, string name)
+    {
+        if (transform.tag == name)
+            return true;
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "Ground")
+                return true;
+        }
+        return false;
     }
 }

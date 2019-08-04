@@ -10,37 +10,37 @@ PrefabInstance:
     - target: {fileID: 8167292450451825889, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_Name
-      value: T_Cha_CarpetCenter
+      value: T_Cha_CarpetCenter (13)
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2932303
+      value: -0.05300021
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4012976
+      value: -0.36000013
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.8188207
+      value: 18.44055
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
@@ -73,6 +73,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2770363939518821629, guid: 44b27dd3b1496d14fac3a38eda8d6b7d,
         type: 3}
+<<<<<<< Updated upstream
     - target: {fileID: 2871716934686639456, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_DrawMode
@@ -87,6 +88,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AutoTiling
       value: 1
+=======
+    - target: {fileID: 2051729322947565606, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2051729322947565606, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a, type: 3}

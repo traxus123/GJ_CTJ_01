@@ -780,8 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_JumpForce: 300
-  m_JumpForcePogo: 600
+  m_JumpForce: 500
+  m_JumpForcePogo: 500
   m_WhenHideSpeedDividedBy: 2
   m_HandPrefab: {fileID: 8883105194730958669, guid: aa716c5555021cd4aac0a517b0f4c716,
     type: 3}
