@@ -71,7 +71,6 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("m_Grounded " + m_Grounded);
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) // Jump
         {
             m_Animator.SetBool("m_Jump", true);
