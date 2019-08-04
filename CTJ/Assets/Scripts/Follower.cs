@@ -6,6 +6,9 @@ public class Follower : Enemy
 {
     public Transform Player;
     public Transform PFollower;
+    public Rigidbody2D Nuage1;
+    public Rigidbody2D Nuage2;
+    public Rigidbody2D Nuage3;
     public float Cooldown = 5.0f;
     public float speed = 5.0f;
 
@@ -13,7 +16,9 @@ public class Follower : Enemy
     private GameObject Figure;
     private Queue<Vector3> mouvmentCharacter = new Queue<Vector3>();
     private Queue<Vector3> mouvmentFigure = new Queue<Vector3>();
-    
+    public int Hit = 0;
+    public bool onHit = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -58,4 +63,34 @@ public class Follower : Enemy
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Player" && !onHit)
+        {
+            onHit = true;
+            Hit++;
+        }
+        if(Hit == 1)
+        {
+            Nuage1.velocity = new Vector2(5.0f, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else if(Hit == 2)
+        {
+            Nuage2.velocity = new Vector2(-5.0f, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        else if(Hit == 3)
+        {
+            Nuage3.velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 5.0f);
+        }
+    }
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        if (coll.collider.tag == "Player")
+        {
+            onHit = false;
+        }
+    }
 }
+
+
+
