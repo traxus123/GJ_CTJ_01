@@ -199,7 +199,7 @@ public class CharacterController : MonoBehaviour
             m_Grounded = true;
         }
 
-        if (coll.collider.tag == "Enemy")
+        if (coll.collider.tag == "Enemy" && !m_Hide)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     bool touchLego;
 
-    public void Awake()
+    protected virtual void Awake()
     {
         timeStun = 0.0f;
         timeSlow = 0.0f;

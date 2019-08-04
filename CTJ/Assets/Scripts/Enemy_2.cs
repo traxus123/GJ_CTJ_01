@@ -19,22 +19,7 @@ public class Enemy_2 : Enemy
     protected override void Update()
     {
         base.Update();
-
-        /*if (!mooving)
-        {
-            if (!onCooldown)
-            {
-                if (((player.position.x - enemy.position.x) <= radius && (player.position.x - enemy.position.x) >= -radius))
-                {
-                    if (((player.position.y - enemy.position.y) <= radius && (player.position.y - enemy.position.y) >= -radius))
-                    {
-                        destination = player.position;
-                        mooving = true;
-                    }
-                }
-            }
-        }*/
-
+        
         if (mooving && !Stun)
         {
             float speedX = speed;
