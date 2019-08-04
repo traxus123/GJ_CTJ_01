@@ -86,7 +86,7 @@ public class CharacterController : MonoBehaviour
                 }
                 else
                 {
-                        m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
+                   m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
                 }
             }
         }
