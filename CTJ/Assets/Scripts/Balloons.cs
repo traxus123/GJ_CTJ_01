@@ -5,8 +5,8 @@ using UnityEngine;
 public class Balloons : Toy
 {
     private bool m_activation = false;
-    private bool destroy = false;
 
+    public float m_JumpForce = 400.0f;
     public float speed = 2.0f;
     public float cooldownBeforeDestory = 2.0f;
     void Start()
@@ -17,16 +17,9 @@ public class Balloons : Toy
     // Update is called once per frame
     void Update()
     {
-        if (m_activation && !destroy)
+        if (m_activation)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, speed);
-        }
-
-        if (destroy)
-        {
-            cooldownBeforeDestory -= Time.deltaTime;
-            if (cooldownBeforeDestory <= 0)
-                Destroy(gameObject);
         }
     }
 
@@ -42,7 +35,8 @@ public class Balloons : Toy
         {
             //Animation de destruction
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            destroy = true;
+            coll.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, m_JumpForce));
+            Destroy(gameObject);
         }
     }
 }

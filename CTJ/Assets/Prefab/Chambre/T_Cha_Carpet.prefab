@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5886756172944936329, guid: 4c7c182181b71c3459de59f85ddc39a3,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Cha_Carpet
       objectReference: {fileID: 0}
     - target: {fileID: 6956669620607210622, guid: 4c7c182181b71c3459de59f85ddc39a3,
         type: 3}
@@ -67,11 +67,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 518929822830373896, guid: 4c7c182181b71c3459de59f85ddc39a3,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5553656635914242328, guid: 44b27dd3b1496d14fac3a38eda8d6b7d,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c7c182181b71c3459de59f85ddc39a3, type: 3}

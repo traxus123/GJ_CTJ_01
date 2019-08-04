@@ -58,7 +58,7 @@ public class CharacterController : MonoBehaviour
             else
                 m_Animator.SetBool("m_Run", false);
         }
-
+        
         m_Rigidbody2D.velocity = new Vector2(velX, m_Rigidbody2D.velocity.y);
 
         // Flip character
@@ -72,6 +72,8 @@ public class CharacterController : MonoBehaviour
     {
         if (m_Grounded && Input.GetKeyDown(KeyCode.Space)) // Jump
         {
+            m_Animator.SetBool("m_Jump", true);
+
             // Add anim for jump
             if (!m_Hide)
                 m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForce));
@@ -124,12 +126,16 @@ public class CharacterController : MonoBehaviour
                 toy.CharacterController = this;
                 m_UsedToys[m_IndexToy] = true;
 
+                m_Animator.SetBool("m_Throw", true);
+
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), toy.GetComponent<BoxCollider2D>());
 
                 Vector3 newPos = transform.position;
                 newPos.z = 5.0f;
                 toy.transform.position = newPos;
                 toy.LaunchLeft();
+
+                m_Animator.SetBool("m_Throw", false);
             }
         }
         
@@ -148,6 +154,8 @@ public class CharacterController : MonoBehaviour
                 Toy toy = Instantiate(m_ToysPrefab[m_IndexToy]);
                 toy.CharacterController = this;
                 m_UsedToys[m_IndexToy] = true;
+
+                m_Animator.SetBool("m_Throw", true);
 
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), toy.GetComponent<BoxCollider2D>());
 
@@ -199,6 +207,7 @@ public class CharacterController : MonoBehaviour
         if (coll.collider.tag == "Ground")
         {
             m_Grounded = true;
+            m_Animator.SetBool("m_Jump", false);
         }
 
         if (coll.collider.tag == "Enemy" && !m_Hide)
@@ -214,5 +223,9 @@ public class CharacterController : MonoBehaviour
             m_Grounded = false;
         }
     }
-
+    
+    public void SetEndThrow()
+    {
+        m_Animator.SetBool("m_Throw", false);
+    }
 }

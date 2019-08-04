@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8167292450451825889, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Cha_CarpetCenter
       objectReference: {fileID: 0}
     - target: {fileID: 4639541679888203030, guid: 54d0a0c90e60bbb4fa6b3fae27979b8a,
         type: 3}
