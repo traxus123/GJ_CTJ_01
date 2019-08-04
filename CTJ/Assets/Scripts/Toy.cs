@@ -6,11 +6,18 @@ public class Toy : MonoBehaviour
 {
     public Vector2 forceWhenLaunched;
 
+    public CharacterController CharacterController;
     Rigidbody2D m_Rigidbody2D;
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
+    public void ReactivateCollider()
+    {
+        if (CharacterController != null)
+            Physics2D.IgnoreCollision(CharacterController.GetComponent<BoxCollider2D>(), GetComponent<BoxCollider2D>(), false);
     }
 
     public void LaunchRight()

@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 2535184409465420289}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,8 +788,10 @@ MonoBehaviour:
   m_Animator: {fileID: 2535184410126813146}
   m_ToysPrefab:
   - {fileID: 6458825423805734100, guid: b3d490462484b2f4e8c2488e3f71871c, type: 3}
-  - {fileID: -1602382041650877192, guid: f82dd4d792a01c34fa9a3e1b9acb4f8c, type: 3}
+  - {fileID: -5775672617249566553, guid: 2a0e6a2165ff90e4eb763c5ba67e4ee6, type: 3}
   - {fileID: 6699370156972498454, guid: e7f791589de886344b455beac3a0c6fd, type: 3}
+  - {fileID: 2715744904290946081, guid: 3dcc98bdcf351d640b93ca6808fecd36, type: 3}
+  - {fileID: 4095908292583434843, guid: 8448207755f1caa44a391738c5f6ade4, type: 3}
   m_UIBag: {fileID: 0}
   m_GroundRadius: 0.01
 --- !u!50 &2535184409465420289

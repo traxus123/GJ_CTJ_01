@@ -62,5 +62,10 @@ public class Enemy : MonoBehaviour
         {
             Stun = true;
         }
+
+        if (coll.collider.tag == "Dyno")
+        {
+            Destroy(gameObject);
+        }
     }
 }

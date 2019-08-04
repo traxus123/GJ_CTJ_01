@@ -120,15 +120,16 @@ public class CharacterController : MonoBehaviour
                 if (m_FacingRight)
                     Flip();
 
-                Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+                Toy toy = Instantiate(m_ToysPrefab[m_IndexToy]);
+                toy.CharacterController = this;
                 m_UsedToys[m_IndexToy] = true;
 
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), toy.GetComponent<BoxCollider2D>());
 
                 Vector3 newPos = transform.position;
                 newPos.z = 5.0f;
-                lego.transform.position = newPos;
-                lego.LaunchLeft();
+                toy.transform.position = newPos;
+                toy.LaunchLeft();
             }
         }
         
@@ -144,15 +145,16 @@ public class CharacterController : MonoBehaviour
                 if (!m_FacingRight)
                     Flip();
 
-                Toy lego = Instantiate(m_ToysPrefab[m_IndexToy]);
+                Toy toy = Instantiate(m_ToysPrefab[m_IndexToy]);
+                toy.CharacterController = this;
                 m_UsedToys[m_IndexToy] = true;
 
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), lego.GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), toy.GetComponent<BoxCollider2D>());
 
                 Vector3 newPos = transform.position;
                 newPos.z = 5.0f;
-                lego.transform.position = newPos;
-                lego.LaunchRight();
+                toy.transform.position = newPos;
+                toy.LaunchRight();
             }
         }
 

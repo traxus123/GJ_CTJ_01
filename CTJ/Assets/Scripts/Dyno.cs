@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dyno : MonoBehaviour
+public class Dyno : Toy
 {
     private bool m_activation;
+    public float speed = 5.0f;
+    public float cooldown = 2.0f;
+
     void Start()
     {
 
@@ -13,9 +16,13 @@ public class Dyno : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_activation)
+        if (m_activation && cooldown > 0.0f)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(5.0f, GetComponent<Rigidbody2D>().velocity.y);
+            cooldown -= Time.deltaTime;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0.0f);
+
+            if (cooldown <= 0.0f)
+                GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
@@ -24,6 +31,7 @@ public class Dyno : MonoBehaviour
         if (coll.collider.tag == "Ground")
         {
             m_activation = true;
+            ReactivateCollider();
         }
     }
 }

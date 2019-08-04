@@ -9,6 +9,7 @@ TagManager:
   - Figure
   - Enemy
   - Character
+  - Dyno
   layers:
   - Default
   - TransparentFX
