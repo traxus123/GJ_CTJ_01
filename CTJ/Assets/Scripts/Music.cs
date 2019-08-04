@@ -20,7 +20,6 @@ public class Music : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(music.timeSamples);
         if (!music.isPlaying)
         {
             music.clip = loopMusic;

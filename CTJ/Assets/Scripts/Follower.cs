@@ -35,9 +35,9 @@ public class Follower : Enemy
 
         Queue<Vector3> mouvement = mouvmentCharacter;
 
-        Figure = GameObject.FindGameObjectWithTag("Figure");
+        /*Figure = GameObject.FindGameObjectWithTag("Figure");
         if (Figure != null)
-            mouvement = mouvmentFigure;
+            mouvement = mouvmentFigure;*/
         
         float speedX = speed;
         if (Slow)
