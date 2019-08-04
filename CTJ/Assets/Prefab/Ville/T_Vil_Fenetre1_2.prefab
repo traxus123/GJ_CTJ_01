@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2676230387630212015}
   - component: {fileID: 8568370223475561562}
   - component: {fileID: 4962002578921826335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Vil_Fenetre1_2
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8353819049344364003}
   - component: {fileID: 3816884158024785742}
   - component: {fileID: 5033831353171205983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tiles foret_0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

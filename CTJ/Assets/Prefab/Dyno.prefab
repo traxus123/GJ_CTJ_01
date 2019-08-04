@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2715744904290946081}
   - component: {fileID: 1376543776562792118}
   - component: {fileID: 38003873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dyno
   m_TagString: Dyno
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118190478828596769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChildrenTag
   m_TagString: Ground
   m_Icon: {fileID: 0}

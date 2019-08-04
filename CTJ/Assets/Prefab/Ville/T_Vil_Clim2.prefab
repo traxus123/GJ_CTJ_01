@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3574857118618138964}
   - component: {fileID: 8650571722486204519}
   - component: {fileID: 9175027240033715588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Vil_Clim2
   m_TagString: Ground
   m_Icon: {fileID: 0}

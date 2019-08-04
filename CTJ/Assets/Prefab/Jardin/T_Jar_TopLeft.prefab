@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5138344227747642305}
   - component: {fileID: 5138344227747642304}
   - component: {fileID: 1959293595626264403}
-  m_Layer: 0
-  m_Name: New Sprite
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: T_Jar_TopLeft
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
