@@ -10,8 +10,14 @@ PrefabInstance:
     - target: {fileID: 8035329009328503574, guid: 06aacc4c708258849a29620b1d09a5ea,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Jar_DownLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 8035329009328503572, guid: 06aacc4c708258849a29620b1d09a5ea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2086490182458200395, guid: d7c185617529f7d4b82b59350a2e84e4,
+        type: 3}
     - target: {fileID: 8035329009328503571, guid: 06aacc4c708258849a29620b1d09a5ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,11 +73,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8035329009328503572, guid: 06aacc4c708258849a29620b1d09a5ea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2086490182458200395, guid: d7c185617529f7d4b82b59350a2e84e4,
-        type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 06aacc4c708258849a29620b1d09a5ea, type: 3}

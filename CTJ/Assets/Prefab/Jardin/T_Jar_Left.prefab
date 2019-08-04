@@ -12,6 +12,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: T_Jar_Left
       objectReference: {fileID: 0}
+    - target: {fileID: 2490833852989696977, guid: c0fed14fe129a5048855e2c38f8370ea,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 378330950559181907, guid: d7c185617529f7d4b82b59350a2e84e4,
+        type: 3}
     - target: {fileID: 2490833852989696982, guid: c0fed14fe129a5048855e2c38f8370ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,16 +73,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2490833852989696977, guid: c0fed14fe129a5048855e2c38f8370ea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 378330950559181907, guid: d7c185617529f7d4b82b59350a2e84e4,
-        type: 3}
     - target: {fileID: 9146502757122049859, guid: c0fed14fe129a5048855e2c38f8370ea,
         type: 3}
       propertyPath: m_AutoTiling
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2490833852989696976, guid: c0fed14fe129a5048855e2c38f8370ea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c0fed14fe129a5048855e2c38f8370ea, type: 3}

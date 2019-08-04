@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 268191548173782857, guid: 9fbdf95d94e006b4cb79361024f43f12,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Jar_Dog3
       objectReference: {fileID: 0}
     - target: {fileID: 268191548173782860, guid: 9fbdf95d94e006b4cb79361024f43f12,
         type: 3}
@@ -73,5 +73,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8319804346353745888, guid: d7c185617529f7d4b82b59350a2e84e4,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 268191548173782858, guid: 9fbdf95d94e006b4cb79361024f43f12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fbdf95d94e006b4cb79361024f43f12, type: 3}

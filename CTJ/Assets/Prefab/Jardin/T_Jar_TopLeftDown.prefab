@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 9015404587787762454, guid: 34cd55edf6678e0499df679a44975241,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Jar_TopLeftDown
       objectReference: {fileID: 0}
     - target: {fileID: 9015404587787762451, guid: 34cd55edf6678e0499df679a44975241,
         type: 3}
@@ -73,5 +73,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8592518728950613328, guid: d7c185617529f7d4b82b59350a2e84e4,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9015404587787762453, guid: 34cd55edf6678e0499df679a44975241, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34cd55edf6678e0499df679a44975241, type: 3}
