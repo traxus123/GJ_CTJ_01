@@ -759,6 +759,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: T_Vil_Mur4
       objectReference: {fileID: 0}
+    - target: {fileID: 6106199524894931629, guid: 3469b36ecc2d0344c98358084a1a2724,
+        type: 3}
+      propertyPath: m_TagString
+      value: simpleWall
+      objectReference: {fileID: 0}
     - target: {fileID: 2874536493031218620, guid: 3469b36ecc2d0344c98358084a1a2724,
         type: 3}
       propertyPath: m_LocalPosition.x

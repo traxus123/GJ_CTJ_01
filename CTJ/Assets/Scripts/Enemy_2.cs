@@ -71,6 +71,11 @@ public class Enemy_2 : Enemy
         {
             destination = collision.transform.position;
         }
+
+        if (collision.tag == "simpleWall")
+        {
+            Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+        }
     }
 
     private void Flip()

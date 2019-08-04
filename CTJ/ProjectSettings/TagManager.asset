@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Character
   - Dyno
+  - simpleWall
   layers:
   - Default
   - TransparentFX
