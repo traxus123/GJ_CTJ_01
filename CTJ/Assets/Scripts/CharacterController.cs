@@ -13,6 +13,7 @@ public class CharacterController : MonoBehaviour
     public Animator m_Animator;
     public Toy[] m_ToysPrefab;
     public UIBag m_UIBag;
+    public LayerMask layerGround;
 
     bool[] m_UsedToys;
     bool m_OnPogostick;
@@ -70,7 +71,8 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (m_Grounded && Input.GetKeyDown(KeyCode.Space)) // Jump
+        Debug.Log("m_Grounded " + m_Grounded);
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) // Jump
         {
             m_Animator.SetBool("m_Jump", true);
 
@@ -243,6 +245,15 @@ public class CharacterController : MonoBehaviour
             if (child.tag == "Ground")
                 return true;
         }
+        return false;
+    }
+
+    bool IsGrounded()
+    {
+        float distance = 1.0f;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distance, layerGround);
+        if (hit.collider != null)
+            return true;
         return false;
     }
 }
