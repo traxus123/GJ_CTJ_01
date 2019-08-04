@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     float timeStun;
     float timeSlow;
 
-    bool touchLego;
+    protected bool touchLego;
 
     protected virtual void Awake()
     {
