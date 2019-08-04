@@ -2221,6 +2221,16 @@ PrefabInstance:
       propertyPath: music
       value: 
       objectReference: {fileID: 1124415677}
+    - target: {fileID: 1292234793234022835, guid: 379e518513daac34ab5d2cca792e82a5,
+        type: 3}
+      propertyPath: introMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 508e129578841d8458fd0ec01a746323, type: 3}
+    - target: {fileID: 1292234793234022835, guid: 379e518513daac34ab5d2cca792e82a5,
+        type: 3}
+      propertyPath: loopMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 508e129578841d8458fd0ec01a746323, type: 3}
     - target: {fileID: 2535184409465420288, guid: 379e518513daac34ab5d2cca792e82a5,
         type: 3}
       propertyPath: m_UIBag
