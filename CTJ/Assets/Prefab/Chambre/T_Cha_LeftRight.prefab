@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 3560869709646011107, guid: e29e380def200b84e90e0199ad50485d,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Cha_LeftRight
       objectReference: {fileID: 0}
     - target: {fileID: 22583452454208276, guid: e29e380def200b84e90e0199ad50485d,
         type: 3}
@@ -73,5 +73,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6089495431834469641, guid: 44b27dd3b1496d14fac3a38eda8d6b7d,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 475379817559484086, guid: e29e380def200b84e90e0199ad50485d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e29e380def200b84e90e0199ad50485d, type: 3}

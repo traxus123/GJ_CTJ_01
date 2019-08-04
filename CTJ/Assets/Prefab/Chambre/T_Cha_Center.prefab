@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 131076239280982967, guid: 20a7daf1d783e814f822a3e18823f164,
         type: 3}
       propertyPath: m_Name
-      value: New Sprite Variant
+      value: T_Cha_Center
       objectReference: {fileID: 0}
     - target: {fileID: 3525006243710472768, guid: 20a7daf1d783e814f822a3e18823f164,
         type: 3}
