@@ -8,6 +8,7 @@ public class Enemy_1 : Enemy
     public float speed = 5.0f;
     public int m_Max = 100;
     public int m_Min = 0;
+    public bool hasTrigger = false;
 
     private int step;
     private bool side;
@@ -17,8 +18,9 @@ public class Enemy_1 : Enemy
     {
         base.Update();
         
-        if (!Stun)
+        if (!Stun && !hasTrigger)
         {
+            GetComponent<Animator>().SetBool("m_Run", true);
             if (side)
             {
                 step++;
@@ -47,6 +49,14 @@ public class Enemy_1 : Enemy
 
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speedX, GetComponent<Rigidbody2D>().velocity.y);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Character")
+        {
+            hasTrigger = false;
         }
     }
 }

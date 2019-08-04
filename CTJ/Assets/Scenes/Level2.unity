@@ -1026,6 +1026,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cddd83b130715aa419ff564a6ebea6a1, type: 3}
+--- !u!1 &638240243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7277285894883772001, guid: a1bb2a651d9b0574f80732f3d8e78104,
+    type: 3}
+  m_PrefabInstance: {fileID: 755967489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &638240244
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638240243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 10.29, y: -2.28}
+  serializedVersion: 2
+  m_Radius: 2.7420626
 --- !u!1001 &676888419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,6 +1377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277285894883772030, guid: a1bb2a651d9b0574f80732f3d8e78104,
+        type: 3}
+      propertyPath: hasTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1bb2a651d9b0574f80732f3d8e78104, type: 3}
@@ -1848,14 +1875,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2040652740821886668, guid: 9f0670517f222104387295eb5bd53657,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 12.01
-      objectReference: {fileID: 0}
     - target: {fileID: 4624639529063434846, guid: 9f0670517f222104387295eb5bd53657,
         type: 3}
       propertyPath: m_Size.x
+      value: 12.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040652740821886668, guid: 9f0670517f222104387295eb5bd53657,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
       value: 12.01
       objectReference: {fileID: 0}
     m_RemovedComponents:
