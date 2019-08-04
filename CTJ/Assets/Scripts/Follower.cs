@@ -101,7 +101,7 @@ public class Follower : Enemy
         {
             Nuage3.velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 5.0f);
         }
-
+        /*
         if (coll.collider.tag == "Lego")
         {
             Stun = true;
@@ -116,7 +116,7 @@ public class Follower : Enemy
         if (coll.collider.tag == "Dyno")
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     void OnCollisionExit2D(Collision2D coll)
