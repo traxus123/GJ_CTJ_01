@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6891865905458681181}
   - component: {fileID: 6052878853170876773}
   - component: {fileID: 1510939945754301135}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tiles_chambre_10
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6060663840035525836}
   - component: {fileID: 7213945002406446909}
   - component: {fileID: -7626638710054006055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Cha_CarpetLeft
   m_TagString: Ground
   m_Icon: {fileID: 0}

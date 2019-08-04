@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2715744904290946081}
   - component: {fileID: 1376543776562792118}
   - component: {fileID: 38003873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dyno
   m_TagString: Dyno
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fef3d6917ff8bc548883a2e4bd127f6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.43, y: 5.92}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2118190478828596769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChildrenTag
   m_TagString: Ground
   m_Icon: {fileID: 0}

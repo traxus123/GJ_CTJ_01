@@ -735,7 +735,7 @@ Transform:
   m_GameObject: {fileID: 2535184409465420290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.46, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
   - {fileID: 2535184410126813147}
   m_Father: {fileID: 0}
@@ -780,8 +780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
-  m_JumpForce: 500
-  m_JumpForcePogo: 500
+  m_JumpForce: 300
+  m_JumpForcePogo: 450
   m_WhenHideSpeedDividedBy: 2
   m_HandPrefab: {fileID: 8883105194730958669, guid: aa716c5555021cd4aac0a517b0f4c716,
     type: 3}
@@ -793,6 +793,9 @@ MonoBehaviour:
   - {fileID: 2715744904290946081, guid: 3dcc98bdcf351d640b93ca6808fecd36, type: 3}
   - {fileID: 4095908292583434843, guid: 8448207755f1caa44a391738c5f6ade4, type: 3}
   m_UIBag: {fileID: 0}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 256
   m_GroundRadius: 0.01
 --- !u!50 &2535184409465420289
 Rigidbody2D:

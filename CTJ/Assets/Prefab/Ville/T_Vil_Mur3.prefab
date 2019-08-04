@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3832034017257797811}
   - component: {fileID: 46350942645812851}
   - component: {fileID: 4935573252010058556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Vil_Mur3
   m_TagString: Ground
   m_Icon: {fileID: 0}

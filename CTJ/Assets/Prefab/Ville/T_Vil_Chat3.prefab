@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 333985214780508864}
   - component: {fileID: 1885705984260185885}
   - component: {fileID: 3057587845591726681}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Vil_Chat3
   m_TagString: Ground
   m_Icon: {fileID: 0}

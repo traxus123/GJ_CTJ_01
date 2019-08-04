@@ -10,7 +10,18 @@ public class Dyno : Toy
 
     void Start()
     {
-
+        GameObject[] GO = GameObject.FindGameObjectsWithTag("Character");
+        bool isfliped = GO[0].GetComponent<SpriteRenderer>().flipX;
+        if (isfliped)
+        {
+            speed = -5.0f;
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            speed = 5.0f;
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
     // Update is called once per frame
