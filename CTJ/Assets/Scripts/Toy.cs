@@ -7,7 +7,7 @@ public class Toy : MonoBehaviour
     public Vector2 forceWhenLaunched;
 
     public CharacterController CharacterController;
-    Rigidbody2D m_Rigidbody2D;
+    protected Rigidbody2D m_Rigidbody2D;
 
     private void Awake()
     {

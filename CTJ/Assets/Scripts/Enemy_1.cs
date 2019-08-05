@@ -9,7 +9,9 @@ public class Enemy_1 : Enemy
     public int m_Max = 100;
     public int m_Min = 0;
     public bool hasTrigger = false;
+    public AudioClip angryDog;
 
+    private bool m_FacingRight = true;
     private int step;
     private bool side;
 
@@ -32,8 +34,11 @@ public class Enemy_1 : Enemy
                 float speedX = speed; 
                 if (Slow)
                     speedX /= 2.0f;
-
+                
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speedX, GetComponent<Rigidbody2D>().velocity.y);
+                
+                if (!m_FacingRight)
+                    Flip();
             }
             else
             {
@@ -47,6 +52,9 @@ public class Enemy_1 : Enemy
                 if (Slow)
                     speedX /= 2.0f;
 
+                if (m_FacingRight)
+                    Flip();
+
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speedX, GetComponent<Rigidbody2D>().velocity.y);
             }
         }
@@ -56,7 +64,16 @@ public class Enemy_1 : Enemy
     {
         if (collision.tag == "Character")
         {
+            GetComponent<AudioSource>().PlayOneShot(angryDog);
             hasTrigger = false;
         }
+    }
+
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+        Vector3 invScale = transform.localScale;
+        invScale.x *= -1;
+        transform.localScale = invScale;
     }
 }

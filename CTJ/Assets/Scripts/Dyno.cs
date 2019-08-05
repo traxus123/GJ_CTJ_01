@@ -7,10 +7,13 @@ public class Dyno : Toy
     private bool m_activation;
     public float speed = 5.0f;
     public float cooldown = 2.0f;
+    public AudioClip DynoSound;
 
-    void Start()
+    void Awake()
     {
-        GameObject[] GO = GameObject.FindGameObjectsWithTag("Character");
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        GetComponent<AudioSource>().PlayOneShot(DynoSound, 0.3f);
+        /*GameObject[] GO = GameObject.FindGameObjectsWithTag("Character");
         bool isfliped = GO[0].GetComponent<SpriteRenderer>().flipX;
         if (isfliped)
         {
@@ -21,7 +24,7 @@ public class Dyno : Toy
         {
             speed = 5.0f;
             GetComponent<SpriteRenderer>().flipX = false;
-        }
+        }*/
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2066037216506850349}
   - component: {fileID: 8558201443446104308}
+  - component: {fileID: 2810857635005018864}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -127,3 +128,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2810857635005018864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009887282035600743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14b5084243f1d748a7ac3d5d1b865cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introMusic: {fileID: 8300000, guid: 7f85cbe1668a2174da91cae62993a57e, type: 3}
+  loopMusic: {fileID: 8300000, guid: 508e129578841d8458fd0ec01a746323, type: 3}
+  AngryDog: {fileID: 8300000, guid: 802caab8678dad043bbadb42c9ef0ba5, type: 3}
+  Dyno: {fileID: 8300000, guid: e5ad642ee41c7b94d817053f5543807f, type: 3}
+  Footsteps: {fileID: 8300000, guid: f97aafec0c7f0c84db82dbac471fba26, type: 3}
+  ghost: {fileID: 8300000, guid: 24085537201ce534c98f1d39fd10d530, type: 3}
+  death: {fileID: 8300000, guid: a0b5efa2b966dd24abd2970e37b29854, type: 3}
+  lego: {fileID: 8300000, guid: 5543dacd5262c7d4f9228f3bb2ee13db, type: 3}
+  pickup: {fileID: 8300000, guid: 6d9942f5529c90f41bd7980887896193, type: 3}
+  pogo: {fileID: 8300000, guid: 452d1a8293e77ff498be326275313d01, type: 3}
+  music: {fileID: 8558201443446104308}

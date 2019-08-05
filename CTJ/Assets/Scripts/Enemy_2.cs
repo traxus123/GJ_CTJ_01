@@ -11,6 +11,7 @@ public class Enemy_2 : Enemy
     public float radius = 5.0f;
     public float cooldownBeforeAttck = 2.0f;
     public float TimeAttack = 2.0f;
+    public AudioClip GhostSound;
 
     private bool m_facingRight = false;
     private bool mooving = false;
@@ -62,8 +63,11 @@ public class Enemy_2 : Enemy
     {
         if (collision.tag == "Character" && !mooving)
         {
-            transform.right = -(collision.transform.position - transform.position); 
-            
+            GetComponent<AudioSource>().PlayOneShot(GhostSound);
+
+            Vector3 right = -(collision.transform.position - transform.position);
+            transform.right = right;
+                        
             mooving = true;
         }
 

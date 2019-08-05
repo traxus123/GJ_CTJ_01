@@ -28,6 +28,10 @@ public class CharacterController : MonoBehaviour
     HandBehaviour handLeft = null;
     HandBehaviour handRight = null;
 
+    public AudioClip pogoSound;
+    public AudioClip footsteps;
+    public AudioClip Death;
+
     private void Awake()
     {
         m_OnPogostick = false;
@@ -51,6 +55,8 @@ public class CharacterController : MonoBehaviour
         float velX = move * m_MaxSpeed;
         if (m_Hide)
             velX = move * m_MaxSpeed / m_WhenHideSpeedDividedBy;
+
+        //GetComponent<AudioSource>().PlayOneShot(footsteps);
         
         if (m_Animator != null)
         {
@@ -81,6 +87,7 @@ public class CharacterController : MonoBehaviour
             {
                 if (m_OnPogostick)
                 {
+                    GetComponent<AudioSource>().PlayOneShot(pogoSound, 1.0f);
                     m_Rigidbody2D.AddForce(new Vector2(0, m_JumpForcePogo));
                     m_OnPogostick = false;
                 }
@@ -182,7 +189,16 @@ public class CharacterController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
                 m_IndexToy = 2;
-            
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+                m_IndexToy = 3;
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+                m_IndexToy = 4;
+
+            if (Input.GetKeyDown(KeyCode.R))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             if (Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 int updateIndex = (int)(Input.GetAxis("Mouse ScrollWheel") * 10 % 3);
@@ -218,8 +234,22 @@ public class CharacterController : MonoBehaviour
 
         if (coll.collider.tag == "Enemy" && !m_Hide)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(DeathCharacter());
         }
+    }
+
+    IEnumerator DeathCharacter()
+    {
+        GetComponent<AudioSource>().PlayOneShot(Death, 1.0f);
+
+        float original = Time.timeScale;
+        Time.timeScale = 0.0f;
+
+        yield return new WaitForSecondsRealtime(1.0f);
+
+        Time.timeScale = original;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnCollisionExit2D(Collision2D coll)

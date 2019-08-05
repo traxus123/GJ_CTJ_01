@@ -719,7 +719,6 @@ GameObject:
   - component: {fileID: 2535184409465420295}
   - component: {fileID: 2535184409465420288}
   - component: {fileID: 2535184409465420289}
-  - component: {fileID: 1292234793234022835}
   - component: {fileID: 1184739149236688781}
   m_Layer: 0
   m_Name: Character
@@ -799,6 +798,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_GroundRadius: 0.01
+  pogoSound: {fileID: 8300000, guid: 452d1a8293e77ff498be326275313d01, type: 3}
+  footsteps: {fileID: 8300000, guid: f97aafec0c7f0c84db82dbac471fba26, type: 3}
+  Death: {fileID: 8300000, guid: a0b5efa2b966dd24abd2970e37b29854, type: 3}
 --- !u!50 &2535184409465420289
 Rigidbody2D:
   serializedVersion: 4
@@ -820,21 +822,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1292234793234022835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2535184409465420290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c14b5084243f1d748a7ac3d5d1b865cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  introMusic: {fileID: 8300000, guid: 7f85cbe1668a2174da91cae62993a57e, type: 3}
-  loopMusic: {fileID: 8300000, guid: 6b349f124abe48e4cbdd9940308d2a4f, type: 3}
-  music: {fileID: 0}
 --- !u!82 &1184739149236688781
 AudioSource:
   m_ObjectHideFlags: 0
