@@ -21,8 +21,7 @@ public class Music : MonoBehaviour
 
         DontDestroyOnLoad(this);
 
-        
-            music = GetComponent<AudioSource>();
+        music = GetComponent<AudioSource>();
         if (music != null)
         {
             if (islastLevel)

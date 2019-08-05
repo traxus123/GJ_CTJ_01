@@ -241,13 +241,8 @@ public class CharacterController : MonoBehaviour
     IEnumerator DeathCharacter()
     {
         GetComponent<AudioSource>().PlayOneShot(Death, 1.0f);
-
-        float original = Time.timeScale;
-        Time.timeScale = 0.0f;
-
-        yield return new WaitForSecondsRealtime(1.0f);
-
-        Time.timeScale = original;
+        
+        yield return new WaitForSecondsRealtime(0.1f);        
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
